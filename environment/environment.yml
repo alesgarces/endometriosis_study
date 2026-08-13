@@ -1,0 +1,25 @@
+name: endometriosis-study
+channels:
+  - conda-forge
+dependencies:
+  - python=3.12
+  - scanpy>=1.11,<1.12
+  - anndata>=0.11,<0.13
+  - pandas>=2.2
+  - scipy>=1.14
+  - numpy>=2.0
+  - h5py>=3.11
+  # Keep h5py and the HDF5 runtime on a compatible ABI generation.
+  - hdf5>=2.1,<2.2
+  # Scanpy 1.11 is verified with the pre-0.66 Numba cache implementation.
+  - numba>=0.64,<0.66
+  - matplotlib>=3.9
+  - seaborn>=0.13
+  - scikit-learn>=1.5
+  - statsmodels>=0.14
+  - python-igraph>=0.11
+  - leidenalg>=0.10
+  - scrublet>=0.2
+  - ipykernel>=6.29
+  - jupyterlab>=4.2
+  - nbformat>=5.10
