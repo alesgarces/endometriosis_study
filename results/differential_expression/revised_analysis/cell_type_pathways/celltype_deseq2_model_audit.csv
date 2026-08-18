@@ -1,0 +1,17 @@
+dataset_id,cell_type,n_cells,n_donors,n_normal,n_endometriosis,model_fitted,design,reason,n_genes_tested
+Mareckova_E-MTAB-14039,dStromal_early,8835,8,3,5,True,~ cycle_group + disease_group,completed,13803
+Huang_GSE214411,dStromal_early,8854,13,7,6,True,~ cycle_group + disease_group,completed,14606
+Mareckova_E-MTAB-14039,eStromal,24078,13,6,7,True,~ cycle_group + disease_group,completed,17794
+Huang_GSE214411,eStromal,28089,13,7,6,True,~ cycle_group + disease_group,completed,17168
+Mareckova_E-MTAB-14039,preGlandular,5739,8,4,4,True,~ cycle_group + disease_group,completed,13487
+Huang_GSE214411,preGlandular,11736,12,6,6,True,~ cycle_group + disease_group,completed,15942
+Mareckova_E-MTAB-14039,SOX9_functionalis_II,5183,8,4,4,True,~ cycle_group + disease_group,completed,14264
+Huang_GSE214411,SOX9_functionalis_II,8047,12,6,6,True,~ cycle_group + disease_group,completed,15243
+Mareckova_E-MTAB-14039,Venous,2349,10,5,5,True,~ cycle_group + disease_group,completed,13134
+Huang_GSE214411,Venous,7287,13,7,6,True,~ cycle_group + disease_group,completed,14231
+Mareckova_E-MTAB-14039,ePV_2,2457,9,4,5,True,~ cycle_group + disease_group,completed,12758
+Huang_GSE214411,ePV_2,3826,13,7,6,True,~ cycle_group + disease_group,completed,12698
+Mareckova_E-MTAB-14039,Immune_Myeloid,771,10,5,5,True,~ cycle_group + disease_group,completed,9585
+Huang_GSE214411,Immune_Myeloid,1801,13,7,6,True,~ cycle_group + disease_group,completed,10581
+Mareckova_E-MTAB-14039,Immune_Lymphoid,2346,11,5,6,True,~ cycle_group + disease_group,completed,11380
+Huang_GSE214411,Immune_Lymphoid,17226,13,7,6,True,~ cycle_group + disease_group,completed,14648

@@ -1,3 +1,4 @@
 .DS_Store
 data/processed/*.h5ad
 huang_data/*.tar
+code/scripts/

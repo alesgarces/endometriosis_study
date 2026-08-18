@@ -1,0 +1,6 @@
+selection_step,n_cells,n_donors,n_normal_donors,n_endometriosis_donors
+CellTypist dStromal_early across all datasets,17794,27,12,15
+Natural menstrual cycle,17755,25,12,13
+No exogenous hormonal treatment,17755,25,12,13
+Superficial endometrial biopsy,17755,25,12,13
+Not a Scrublet-predicted doublet,17716,25,12,13

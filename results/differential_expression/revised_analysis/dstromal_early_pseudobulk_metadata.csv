@@ -1,0 +1,22 @@
+donor_id,dataset_id,disease_group,case_control,cycle_group,menstrual_cycle_stage_fine,cycle_context,hormonal_treatment,tissue_location,n_cells,included
+GSE214411::EMS1,Huang_GSE214411,Endometriosis,case,Secretory,Secretory Early,natural_cycle,none,endometrium,1792,True
+GSE214411::EMS2,Huang_GSE214411,Endometriosis,case,Proliferative,Proliferative,natural_cycle,none,endometrium,98,True
+GSE214411::EMS3,Huang_GSE214411,Endometriosis,case,Proliferative,Proliferative,natural_cycle,none,endometrium,50,True
+GSE214411::EMS4,Huang_GSE214411,Endometriosis,case,Proliferative,Proliferative,natural_cycle,none,endometrium,79,True
+GSE214411::EMS5,Huang_GSE214411,Endometriosis,case,Secretory,Secretory Mid,natural_cycle,none,endometrium,1794,True
+GSE214411::EMS6,Huang_GSE214411,Endometriosis,case,Secretory,Secretory Mid,natural_cycle,none,endometrium,935,True
+GSE214411::N1,Huang_GSE214411,Normal,control,Secretory,Secretory Mid,natural_cycle,none,endometrium,110,True
+GSE214411::N2,Huang_GSE214411,Normal,control,Proliferative,Proliferative,natural_cycle,none,endometrium,449,True
+GSE214411::N3,Huang_GSE214411,Normal,control,Proliferative,Proliferative,natural_cycle,none,endometrium,129,True
+GSE214411::N4,Huang_GSE214411,Normal,control,Proliferative,Proliferative,natural_cycle,none,endometrium,87,True
+GSE214411::N5,Huang_GSE214411,Normal,control,Secretory,Unknown,natural_cycle,none,endometrium,1596,True
+GSE214411::N6,Huang_GSE214411,Normal,control,Secretory,Unknown,natural_cycle,none,endometrium,251,True
+GSE214411::N7,Huang_GSE214411,Normal,control,Secretory,Unknown,natural_cycle,none,endometrium,1484,True
+Mareckova_E-MTAB-14039::ES345,Mareckova_E-MTAB-14039,Normal,control,Secretory,Secretory Early,natural_cycle,none,endometrium,3743,True
+Mareckova_E-MTAB-14039::FX1125,Mareckova_E-MTAB-14039,Endometriosis,case,Proliferative,Proliferative,natural_cycle,none,endometrium,56,True
+Mareckova_E-MTAB-14039::FX1146,Mareckova_E-MTAB-14039,Normal,control,Proliferative,Proliferative,natural_cycle,none,endometrium,854,True
+Mareckova_E-MTAB-14039::FX1156,Mareckova_E-MTAB-14039,Endometriosis,case,Secretory,Secretory Mid,natural_cycle,none,endometrium,178,True
+Mareckova_E-MTAB-14039::FX1176,Mareckova_E-MTAB-14039,Endometriosis,case,Proliferative,Proliferative,natural_cycle,none,endometrium,53,True
+Mareckova_E-MTAB-14039::FX1259,Mareckova_E-MTAB-14039,Endometriosis,case,Proliferative,Proliferative Late,natural_cycle,none,endometrium,63,True
+Mareckova_E-MTAB-14039::FX9006,Mareckova_E-MTAB-14039,Endometriosis,case,Secretory,Secretory Early,natural_cycle,none,endometrium,3822,True
+Mareckova_E-MTAB-14039::SE06,Mareckova_E-MTAB-14039,Normal,control,Menstrual,Menstrual,natural_cycle,none,endometrium,66,True

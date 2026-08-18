@@ -1,6 +1,6 @@
 # Endometriosis single-cell RNA-seq analysis
 
-This project reanalyzes human endometrial single-cell RNA-sequencing data to characterize cell states and test for endometriosis-associated expression changes in early decidualized stromal cells (`dStromal_early`). The main workflow is implemented in [`code/notebooks/endometriosis_scRNAseq_analysis.ipynb`](code/notebooks/endometriosis_scRNAseq_analysis.ipynb).
+This project reanalyzes human endometrial single-cell RNA-sequencing data to characterize cell states, resolve endometriosis-associated pathway dysregulation by cell type, and test a genetically motivated early decidualized stromal state (`dStromal_early`) in greater depth. The current workflow is implemented in [`code/notebooks/endometriosis_scRNAseq_analysis.ipynb`](code/notebooks/endometriosis_scRNAseq_analysis.ipynb).
 
 The analysis combines the newly generated Marečková cohort from [E-MTAB-14039](https://www.ebi.ac.uk/biostudies/arrayexpress/studies/E-MTAB-14039) with the Huang cohort ([GSE214411](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE214411)). Its biological and methodological starting point is Marečková et al., [*An integrated single-cell reference atlas of the human endometrium*](https://www.nature.com/articles/s41588-024-01873-w), published in *Nature Genetics* in 2024.
 
@@ -8,9 +8,9 @@ The analysis combines the newly generated Marečková cohort from [E-MTAB-14039]
 
 Marečková et al. identified `dStromal_early`, `dStromal_mid`, uM1 and uM2 among the cell states most enriched for expression of genes positionally close to endometriosis risk variants in their functional GWAS analysis. They also described `dStromal_early` as an early-secretory-phase decidualized stromal state.
 
-> **Working hypothesis:** because early decidualized stromal cells were among the cell types most enriched for expression of genes near endometriosis risk variants, `dStromal_early` cells should exhibit a multi-gene disease-associated transcriptional signature, including several genes with higher expression in endometriosis than in controls.
+> **Working hypothesis:** because early decidualized stromal cells were among the cell types most enriched for expression of genes near endometriosis risk variants, `dStromal_early` should exhibit a donor-level, disease-associated transcriptional program. Even if individual differentially expressed genes do not replicate across small cohorts, coordinated pathways involved in decidualization, stromal remodeling and inflammatory communication should show concordant direction in Marečková and Huang. Comparing the same pathways across other major cell types should distinguish a `dStromal_early`-localized mechanism from multicellular or tissue-wide dysregulation.
 
-This is a testable prediction rather than a necessary consequence of the fGWAS result. Cell-type enrichment for genes near risk variants identifies a genetically relevant cellular context, but it does not by itself establish the direction or magnitude of case-control differential expression.
+This is a testable prediction rather than a necessary consequence of the fGWAS result. Cell-type enrichment for genes near risk variants identifies a genetically relevant cellular context, but it does not establish case-control differential expression, pathway direction, cell-type specificity or therapeutic tractability. Marečková is therefore treated as the primary cohort, while Huang is modeled separately as independent sensitivity evidence rather than pooled with the discovery data.
 
 ## Input data
 
@@ -82,17 +82,41 @@ Cell types are predicted from log-CP10K expression with CellTypist's `Human_Endo
 
 ![CellTypist Human Endometrium Atlas labels on the scVI UMAP](results/cell_typing/figures/02_celltypist_labels_on_scvi_umap.png)
 
-### 4. Study-specific `dStromal_early` differential expression
+### 4. Canonical donor-level differential expression and pathway analysis
 
-The DE analysis retains CellTypist-labeled `dStromal_early` cells from natural-cycle, untreated, superficial endometrial samples, excludes Scrublet-predicted doublets, and requires at least 20 retained cells per donor. `dStromal_early` is an early-secretory-associated cell state; the current implementation does not additionally require the donor metadata field `menstrual_cycle_stage_fine == 'Secretory Early'`.
+The inferential analysis retains natural-cycle, untreated, eutopic endometrial samples, excludes Scrublet-predicted doublets, and requires at least 20 retained cells of a given type per donor. Raw counts are summed into one pseudobulk per biological donor. A cell-type model requires at least three Normal and three Endometriosis donors within each study.
 
-Raw counts are summed into one pseudobulk per biological donor. Marečková and Huang are modeled separately with PyDESeq2:
+Eight major compartments satisfy these criteria in both cohorts: `dStromal_early`, `eStromal`, `preGlandular`, `SOX9_functionalis_II`, `Venous`, `ePV_2`, `Immune_Myeloid` and `Immune_Lymphoid`. All 16 planned cell-type-by-study models fitted successfully. Marečková and Huang are modeled separately with PyDESeq2:
 
 ```text
 ~ cycle_group + disease_group
 ```
 
-The menstrual-cycle term is retained when estimable. The reported contrast is Endometriosis minus Normal, and false discovery rate is controlled separately within each dataset at 0.10. There is no pooled disease-effect model.
+The menstrual-cycle term is retained when estimable. The reported contrast is Endometriosis minus Normal, and gene-level false discovery rate is controlled separately within each cell-type and dataset at 0.10. Hallmark pathways are tested from the complete DESeq2 Wald-statistic ranking using weighted preranked GSEA. Pathway P values are adjusted both across the 50 Hallmarks within each cell type and across all cell-type-by-pathway tests within each dataset. There is no pooled disease-effect model and individual cells are never treated as replicates.
+
+![Cell-type-resolved Hallmark dysregulation](results/differential_expression/revised_analysis/cell_type_pathways/figures/05_celltype_hallmark_dysregulation.png)
+
+![Cross-study Hallmark concordance by cell type](results/differential_expression/revised_analysis/cell_type_pathways/figures/06_celltype_hallmark_cross_study_concordance.png)
+
+Across the eight cell types, 52 pathway-cell-type pairs have within-cell-type BH-FDR below 0.25 in both cohorts and matching normalized enrichment-score direction. The `dStromal_early` state contributes nine concordant pathways, all higher in Endometriosis:
+
+- allograft rejection;
+- androgen response;
+- coagulation;
+- epithelial-mesenchymal transition;
+- IL2-STAT5 signaling;
+- KRAS signaling up;
+- mTORC1 signaling;
+- myogenesis; and
+- UV response down.
+
+Within `dStromal_early`, 31 Hallmarks pass the exploratory threshold in Marečková and 32 in Huang. Nineteen are significant in both, but only the nine listed above agree in direction; the other ten are directionally discordant and are not interpreted as replicated mechanisms.
+
+The comparison refines the specificity claim. Androgen response, KRAS signaling up, mTORC1 signaling and UV response down are concordant only in `dStromal_early` among the eight tested states. Coagulation and IL2-STAT5 recur with the same direction in one other compartment, while allograft rejection also recurs in `preGlandular` and `Immune_Lymphoid`. Epithelial-mesenchymal transition and myogenesis recur in `SOX9_functionalis_II`, but with the opposite direction, demonstrating that a shared pathway name need not represent the same cell-type program.
+
+#### Focal `dStromal_early` gene-level findings
+
+The focal section is now a prespecified view of the canonical cell-type models rather than a second DE or GSEA run. `dStromal_early` is an early-secretory-associated cell state; donor metadata are not additionally restricted to `menstrual_cycle_stage_fine == 'Secretory Early'` because that subset cannot support inferential modeling in both cohorts.
 
 | Dataset | Donors (Normal / Endometriosis) | Genes tested | FDR < 0.10 | Higher in endometriosis | Higher in Normal |
 |---|---:|---:|---:|---:|---:|
@@ -103,20 +127,20 @@ The current results contain 58 unique FDR-significant gene-study associations. N
 
 The figure shows the 40 most significant associations by adjusted P value. Positive log2 fold changes indicate higher expression in endometriosis. Gold outlines identify genes with an Open Targets drug or clinical-candidate record; they do not demonstrate that the associated drug would treat endometriosis.
 
-![Study-specific dStromal early differential-expression effects](results/differential_expression/study_specific_sensitivity/figures/01_study_specific_significant_gene_effects.png)
+![Study-specific dStromal early differential-expression effects](results/differential_expression/revised_analysis/figures/01_study_specific_significant_gene_effects.png)
 
 Six significant genes currently overlap Open Targets drug or clinical-candidate records. Positive log2 fold changes indicate higher expression in endometriosis; negative values indicate higher expression in controls.
 
-| Dataset | Gene | log2 fold change | FDR | Open Targets drugs or candidates recorded in this analysis |
-|---|---|---:|---:|---|
-| Marečková | `SPP1` | 4.390 | 0.0012 | ASK-8007 |
-| Marečková | `CD74` | 2.606 | 0.0355 | Milatuzumab; repotrectinib |
-| Huang | `SMAD7` | 1.453 | 0.0039 | Mongersen sodium |
-| Huang | `TGFB1` | 0.667 | 0.0169 | Bintrafusp alfa; fresolimumab; luspatercept; LY-2382770; metelimumab |
-| Huang | `ADM` | 1.503 | 0.0480 | Enibarcimab |
-| Huang | `VWF` | -1.818 | 0.0946 | Caplacizumab; egaptivon pegol; von Willebrand factor products |
+| Dataset | Gene | log2 fold change | FDR | Open Targets drugs or candidates | Relationship to the nine concordant `dStromal_early` pathways |
+|---|---|---:|---:|---|---|
+| Marečková | `SPP1` | 4.390 | 0.0012 | ASK-8007 | Leading-edge gene in its source cohort |
+| Marečková | `CD74` | 2.606 | 0.0355 | Milatuzumab; repotrectinib | Leading-edge gene in its source cohort |
+| Huang | `SMAD7` | 1.453 | 0.0039 | Mongersen sodium | Leading-edge gene in its source cohort |
+| Huang | `TGFB1` | 0.667 | 0.0169 | Bintrafusp alfa; fresolimumab; luspatercept; LY-2382770; metelimumab | Leading-edge gene in its source cohort |
+| Huang | `ADM` | 1.503 | 0.0480 | Enibarcimab | DE-only candidate relative to the nine concordant sets |
+| Huang | `VWF` | -1.818 | 0.0946 | Caplacizumab; egaptivon pegol; von Willebrand factor products | Coagulation-set member, but not a source-cohort leading-edge gene |
 
-Drug-target status is annotation layered onto the DE results and does not affect statistical significance. A database association can represent direct binding, modulation of an RNA or protein, replacement therapy, or activity against a fusion containing the gene; the entries are therefore hypotheses for follow-up rather than treatment recommendations.
+Drug-target status is annotation layered onto the DE results and does not affect statistical significance. `SPP1`, `CD74`, `TGFB1` and `SMAD7` connect the gene-level and pathway-level analyses, but only in the cohort where each gene was detected. No candidate is a leading-edge driver in both studies. A database association can represent direct binding, modulation of an RNA or protein, replacement therapy, or activity against a fusion containing the gene; the entries are therefore hypotheses for follow-up rather than treatment recommendations.
 
 #### CD74 example
 
@@ -129,13 +153,21 @@ Two oncology-related records were returned for `CD74`, but they have different m
 
 Consequently, `CD74` is a statistically supported, pharmacologically annotated candidate in the Marečková analysis, but neither record currently demonstrates therapeutic relevance to endometriosis. Follow-up would require confirmation of CD74 protein localization, evidence that CD74/MIF signaling contributes to the disease phenotype, perturbation experiments in an appropriate endometrial model, and independent donor validation.
 
-Full result tables are available in [`results/differential_expression/study_specific_sensitivity/`](results/differential_expression/study_specific_sensitivity/), including per-study DE tables, significant-gene tables, pseudobulk metadata, the study comparison and drug-target evidence.
+Full consolidated result tables are available in [`results/differential_expression/revised_analysis/`](results/differential_expression/revised_analysis/). Cell-type-resolved DE, Hallmark GSEA and concordance tables are under [`cell_type_pathways/`](results/differential_expression/revised_analysis/cell_type_pathways/); focal exports, pathway-supported drug candidates, figures and the evidence summary remain at the top level for convenience.
 
-## Interpretation of the hypothesis
+## Hypothesis evaluation and principal finding
 
-The current analysis supports the limited statement that multiple genes are differentially expressed in `dStromal_early` cells within each study, with most significant associations directed toward higher expression in endometriosis. It does not yet establish a reproducible cross-study gene signature because no individual gene passes the study-specific FDR threshold in both cohorts.
+The working hypothesis is **supported at the pathway level but not at the individual-gene replication level**.
 
-The hypothesis should therefore be evaluated through effect-direction concordance, pathway or gene-set enrichment, and validation in additional donors—not solely by counting significant genes in either dataset. The small Marečková comparison, particularly its three Normal donors, also warrants cautious interpretation.
+The primary Marečková analysis identifies 12 FDR-significant `dStromal_early` genes and the independent Huang sensitivity analysis identifies 46. Most are higher in Endometriosis, but no individual gene passes FDR < 0.10 in both cohorts. The analysis therefore does not establish a replicated cross-study gene signature.
+
+The full ranked expression profiles nevertheless converge on nine `dStromal_early` Hallmark programs with matching positive direction and within-cell-type FDR < 0.25 in both cohorts. The cell-type screen further shows that four of these—mTORC1 signaling, KRAS signaling up, androgen response and UV response down—are concordant only in `dStromal_early` among the eight tested states. This provides cross-study evidence for a coordinated, cell-state-dependent program that is not apparent from overlap of significant genes alone.
+
+The principal biological finding is therefore that endometriosis-associated transcriptional dysregulation is organized at the pathway and cell-type levels: `dStromal_early` shows reproducible positive enrichment of remodeling, signaling and immune-interaction programs, while related pathways can be shared, absent or oppositely directed in other endometrial compartments. The genetic rationale supports studying this state, but the pathway screen—not the fGWAS enrichment alone—provides the disease-associated functional evidence.
+
+The resulting therapeutic hypothesis is to test **partial mTORC1 attenuation as a mechanistic probe** in donor-derived stromal-cell decidualization models, measuring whether it rescues the disease-associated remodeling program while preserving decidual function. This is not a treatment recommendation. It requires protein or activity-level confirmation, perturbational validation, dose-response assessment and replication in additional donors.
+
+Important limitations remain: Marečková includes only three Normal donors in the focal model; fine menstrual-stage matching is incomplete; cell-type labels are transferred computationally; transcript abundance does not establish protein activity; and the pathway FDR threshold is exploratory. The secretory-only descriptive sensitivity retains the full-model direction in all eight key-gene-by-study comparisons, but its donor counts are too small for separate inference.
 
 ## Reproducible environment
 
@@ -154,7 +186,7 @@ conda run --name endometriosis-study \
   --display-name "Endometriosis study"
 ```
 
-Open [`code/notebooks/endometriosis_scRNAseq_analysis.ipynb`](code/notebooks/endometriosis_scRNAseq_analysis.ipynb) in JupyterLab or an IDE and select the **Endometriosis study** kernel.
+Open [`code/notebooks/endometriosis_scRNAseq_analysis.ipynb`](code/notebooks/endometriosis_scRNAseq_analysis.ipynb) in JupyterLab or an IDE and select the **Endometriosis study** kernel. The focal `dStromal_early` tables and figures are derived from the same canonical cell-type models; the notebook does not rerun focal DESeq2 or GSEA.
 
 ## Main outputs
 
@@ -162,6 +194,8 @@ Open [`code/notebooks/endometriosis_scRNAseq_analysis.ipynb`](code/notebooks/end
 |---|---|
 | QC tables and figures | [`results/qc/`](results/qc/) |
 | CellTypist annotations and figures | [`results/cell_typing/`](results/cell_typing/) |
-| Study-specific DE and drug-target results | [`results/differential_expression/study_specific_sensitivity/`](results/differential_expression/study_specific_sensitivity/) |
+| Consolidated focal DE, pathway, sensitivity and drug-target results | [`results/differential_expression/revised_analysis/`](results/differential_expression/revised_analysis/) |
+| Cell-type-resolved DE, Hallmark GSEA and cross-study concordance | [`results/differential_expression/revised_analysis/cell_type_pathways/`](results/differential_expression/revised_analysis/cell_type_pathways/) |
+| Consolidation equivalence report | [`results/differential_expression/revised_analysis/consolidation_equivalence_summary.csv`](results/differential_expression/revised_analysis/consolidation_equivalence_summary.csv) |
 | Filtered and integrated `AnnData` objects | `data/processed/` |
 | Cached CellTypist and scVI models | `data/models/` and `data/processed/scvi_model/` |
