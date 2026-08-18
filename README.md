@@ -6,7 +6,7 @@ This project reanalyzes human endometrial single-cell RNA-seq data to identify e
 
 Marečková et al. identified `dStromal_early`, `dStromal_mid`, uM1 and uM2 among the states most enriched for expression of genes near endometriosis risk variants. They described `dStromal_early` as an early-secretory decidualized stromal state.
 
-> **Working hypothesis:** because `dStromal_early` is enriched for expression of genes near endometriosis risk variants, it should show a donor-level disease-associated transcriptional program. Decidualization, stromal-remodeling and inflammatory pathways should agree in direction across Marečková and Huang even if individual genes do not replicate. Comparison with other cell types should reveal whether this program is `dStromal_early`-localized or more broadly distributed.
+> **Working hypothesis:** Because `dStromal_early` is enriched for expression of genes near endometriosis risk variants, it should show a donor-level disease-associated transcriptional program and candidates for drug treatment.
 
 The fGWAS enrichment motivates the cellular focus but does not establish differential expression, pathway direction, cell-type specificity or therapeutic relevance. Marečková is therefore the primary cohort; Huang is modeled separately as independent sensitivity evidence.
 
