@@ -1,0 +1,5 @@
+figure_path
+results/qc/figures/01_pre_filter_qc_distributions.png
+results/qc/figures/02_pre_filter_qc_by_library.png
+results/qc/figures/03_post_filter_qc_distributions.png
+results/qc/figures/04_gene_louvain_cycling_marker_diagnostics.png

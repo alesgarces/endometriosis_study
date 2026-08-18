@@ -1,0 +1,10 @@
+gene_id,approved_symbol,is_known_drug_target,drug_id,drug_name,drug_type,max_clinical_stage,queried_at_utc,source_url
+ENSG00000167244,IGF2,True,CHEMBL4297850,XENTUZUMAB,Antibody,PHASE_2,2026-08-17T15:18:00+00:00,https://platform-docs.opentargets.org/data-access/graphql-api
+ENSG00000167244,IGF2,True,CHEMBL2109355,DUSIGITUMAB,Antibody,PHASE_2,2026-08-17T15:18:00+00:00,https://platform-docs.opentargets.org/data-access/graphql-api
+ENSG00000017427,IGF1,True,CHEMBL4297850,XENTUZUMAB,Antibody,PHASE_2,2026-08-17T15:18:00+00:00,https://platform-docs.opentargets.org/data-access/graphql-api
+ENSG00000017427,IGF1,True,CHEMBL2109355,DUSIGITUMAB,Antibody,PHASE_2,2026-08-17T15:18:00+00:00,https://platform-docs.opentargets.org/data-access/graphql-api
+ENSG00000196208,GREB1,False,,,,,2026-08-17T15:18:00+00:00,https://platform-docs.opentargets.org/data-access/graphql-api
+ENSG00000204217,BMPR2,True,CHEMBL2109171,DIBOTERMIN ALFA,Protein,APPROVAL,2026-08-17T15:18:00+00:00,https://platform-docs.opentargets.org/data-access/graphql-api
+ENSG00000204217,BMPR2,True,CHEMBL2108594,EPTOTERMIN ALFA,Protein,APPROVAL,2026-08-17T15:18:00+00:00,https://platform-docs.opentargets.org/data-access/graphql-api
+ENSG00000107984,DKK1,True,CHEMBL4297562,DKN-01,Unknown,PHASE_2,2026-08-17T15:18:00+00:00,https://platform-docs.opentargets.org/data-access/graphql-api
+ENSG00000107984,DKK1,True,CHEMBL2109381,BHQ-880,Unknown,PHASE_2,2026-08-17T15:18:00+00:00,https://platform-docs.opentargets.org/data-access/graphql-api

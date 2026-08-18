@@ -1,0 +1,2 @@
+model_name,n_model_genes,n_cell_types,details,source,version,model_path
+Human_Endometrium_Atlas.pkl,3736,36,endometrial cell types integrated from seven datasets across the menstrual cycle,https://doi.org/10.1038/s41588-024-01873-w,v1,data/models/celltypist/data/models/Human_Endometrium_Atlas.pkl

@@ -1,0 +1,8 @@
+figure_path
+results/cell_typing/figures/01_scvi_umap_leiden.png
+results/cell_typing/figures/02_celltypist_labels_on_scvi_umap.png
+results/cell_typing/figures/03_celltypist_confidence_on_scvi_umap.png
+results/cell_typing/figures/04_celltypist_marker_dotplot.png
+results/cell_typing/figures/05_celltypist_and_disease_status_umap.png
+results/cell_typing/figures/06_celltypist_composition_by_disease.png
+results/cell_typing/figures/07_celltypist_composition_by_menstrual_cycle_fine.png

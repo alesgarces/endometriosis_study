@@ -1,0 +1,3 @@
+dataset_id,n_donors,n_normal,n_endometriosis,model_fitted,reason,n_genes_tested
+Huang_GSE214411,13,7,6,True,~ cycle_group + disease_group,14606
+Mareckova_E-MTAB-14039,8,3,5,True,~ cycle_group + disease_group,13803

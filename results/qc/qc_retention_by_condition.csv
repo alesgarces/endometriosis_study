@@ -1,0 +1,3 @@
+case_control,n_cells_before,n_cells_pass,n_fail_low_genes,n_fail_high_mito,n_predicted_doublets,retention_percent
+control,114328,88364,21823,12115,2192,77.28990273598768
+case,135356,116021,15075,7914,1759,85.71544667395608

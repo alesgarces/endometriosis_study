@@ -1,0 +1,20 @@
+{
+  "model_device": "cpu",
+  "signature": "c2513a2d9f7712fd05c7c0135caa39b14fe7cab74058c656e1e2bbed1d015501",
+  "signature_payload": {
+    "batch_key": "library_id",
+    "batch_size": 1024,
+    "cell_gene_batch_sha256": "58cdb8600271ff6e4afd2493df73da5b9c9808db135131223e785fc51a44d3eb",
+    "count_nnz": 66719551,
+    "count_sum": 867456768.0,
+    "gene_likelihood": "nb",
+    "max_epochs": null,
+    "n_latent": 30,
+    "n_layers": 2,
+    "n_obs": 204385,
+    "n_vars": 1895,
+    "random_seed": 0,
+    "scvi_tools_version": "1.5.0.post1",
+    "train_size": 0.9
+  }
+}

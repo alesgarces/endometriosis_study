@@ -1,0 +1,26 @@
+celltypist_label,Menstrual,Proliferative Early,Proliferative,Proliferative Late,Secretory Early,Secretory Mid,Hormones,Unknown
+Ciliated,3,3,805,126,484,367,24,1158
+Cycling,5,24,1686,636,1646,209,12,414
+Glandular,0,0,61,3,24,5981,17,109
+Glandular_secretory,0,0,5,0,0,2978,8,1
+HOXA13,0,0,1,1,0,85,0,22
+Immune_Lymphoid,131,94,10879,280,2796,4707,2117,2189
+Immune_Myeloid,41,42,1761,155,213,223,3884,270
+MUC5B,0,6,87,4,1,145,1,3
+SOX9_functionalis_II,15,9,9996,1300,771,471,19,792
+SOX9_luminal,34,15,1240,400,346,433,26,166
+Venous,41,37,6746,311,1541,2026,321,1990
+dStromal_early,66,2,1887,66,9365,3036,39,3333
+dStromal_late,0,0,3,0,0,5,829,0
+dStromal_mid,2,0,105,0,349,12263,55,328
+eHormones,100,56,1147,56,143,117,3770,31
+ePV_1a,0,0,1678,0,3,34,32,5
+ePV_1b,4,9,511,70,309,629,55,463
+ePV_2,41,13,3119,337,1467,595,303,865
+eStromal,902,108,31144,3934,8656,1491,255,6326
+eStromal_MMPs,1,6,68,1,1,0,1057,1
+eStromal_cycling,65,0,3175,433,1360,60,3,1041
+mPV,0,0,858,0,2,11,1,3
+preGlandular,43,4,1607,200,7253,7781,33,1587
+preLuminal,0,1,1,1,398,381,8,175
+uSMCs,0,0,274,0,0,1,0,6

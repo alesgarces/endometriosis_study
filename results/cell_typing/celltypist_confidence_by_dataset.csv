@@ -1,0 +1,3 @@
+dataset_id,n_cells,n_donors,median_confidence,median_margin
+Huang_GSE214411,110785,13,0.9733841,0.924461
+Mareckova_E-MTAB-14039,93600,16,0.9757363,0.9326743

@@ -1,0 +1,67 @@
+gene_id,approved_symbol,is_known_drug_target,drug_id,drug_name,drug_type,max_clinical_stage,queried_at_utc,source_url
+ENSG00000273748,,False,,,,,2026-08-18T01:53:14.368231+00:00,https://platform-docs.opentargets.org/data-access/graphql-api
+ENSG00000135298,ADGRB3,False,,,,,2026-08-18T01:53:14.368231+00:00,https://platform-docs.opentargets.org/data-access/graphql-api
+ENSG00000204386,NEU1,False,,,,,2026-08-18T01:53:14.368231+00:00,https://platform-docs.opentargets.org/data-access/graphql-api
+ENSG00000248905,FMN1,False,,,,,2026-08-18T01:53:14.368231+00:00,https://platform-docs.opentargets.org/data-access/graphql-api
+ENSG00000136997,MYC,False,,,,,2026-08-18T01:53:14.368231+00:00,https://platform-docs.opentargets.org/data-access/graphql-api
+ENSG00000101665,SMAD7,True,CHEMBL3707383,MONGERSEN SODIUM,Oligonucleotide,PHASE_3,2026-08-18T01:53:14.368231+00:00,https://platform-docs.opentargets.org/data-access/graphql-api
+ENSG00000114784,EIF1B,False,,,,,2026-08-18T01:53:14.368231+00:00,https://platform-docs.opentargets.org/data-access/graphql-api
+ENSG00000135678,CPM,False,,,,,2026-08-18T01:53:14.368231+00:00,https://platform-docs.opentargets.org/data-access/graphql-api
+ENSG00000106123,EPHB6,False,,,,,2026-08-18T01:53:14.368231+00:00,https://platform-docs.opentargets.org/data-access/graphql-api
+ENSG00000105329,TGFB1,True,CHEMBL3039545,LUSPATERCEPT,Protein,APPROVAL,2026-08-18T01:53:14.368231+00:00,https://platform-docs.opentargets.org/data-access/graphql-api
+ENSG00000105329,TGFB1,True,CHEMBL4298024,BINTRAFUSP ALFA,Protein,PHASE_3,2026-08-18T01:53:14.368231+00:00,https://platform-docs.opentargets.org/data-access/graphql-api
+ENSG00000105329,TGFB1,True,CHEMBL1743022,FRESOLIMUMAB,Antibody,PHASE_2,2026-08-18T01:53:14.368231+00:00,https://platform-docs.opentargets.org/data-access/graphql-api
+ENSG00000105329,TGFB1,True,CHEMBL2108431,METELIMUMAB,Antibody,PHASE_1_2,2026-08-18T01:53:14.368231+00:00,https://platform-docs.opentargets.org/data-access/graphql-api
+ENSG00000105329,TGFB1,True,CHEMBL2109585,LY-2382770,Unknown,PHASE_2,2026-08-18T01:53:14.368231+00:00,https://platform-docs.opentargets.org/data-access/graphql-api
+ENSG00000137801,THBS1,False,,,,,2026-08-18T01:53:14.368231+00:00,https://platform-docs.opentargets.org/data-access/graphql-api
+ENSG00000122877,EGR2,False,,,,,2026-08-18T01:53:14.368231+00:00,https://platform-docs.opentargets.org/data-access/graphql-api
+ENSG00000134531,EMP1,False,,,,,2026-08-18T01:53:14.368231+00:00,https://platform-docs.opentargets.org/data-access/graphql-api
+ENSG00000221823,PPP3R1,False,,,,,2026-08-18T01:53:14.368231+00:00,https://platform-docs.opentargets.org/data-access/graphql-api
+ENSG00000204103,MAFB,False,,,,,2026-08-18T01:53:14.368231+00:00,https://platform-docs.opentargets.org/data-access/graphql-api
+ENSG00000007866,TEAD3,False,,,,,2026-08-18T01:53:14.368231+00:00,https://platform-docs.opentargets.org/data-access/graphql-api
+ENSG00000203727,SAMD5,False,,,,,2026-08-18T01:53:14.368231+00:00,https://platform-docs.opentargets.org/data-access/graphql-api
+ENSG00000165644,COMTD1,False,,,,,2026-08-18T01:53:14.368231+00:00,https://platform-docs.opentargets.org/data-access/graphql-api
+ENSG00000148926,ADM,True,CHEMBL4650434,ENIBARCIMAB,Antibody,PHASE_2_3,2026-08-18T01:53:14.368231+00:00,https://platform-docs.opentargets.org/data-access/graphql-api
+ENSG00000181649,PHLDA2,False,,,,,2026-08-18T01:53:14.368231+00:00,https://platform-docs.opentargets.org/data-access/graphql-api
+ENSG00000105538,RASIP1,False,,,,,2026-08-18T01:53:14.368231+00:00,https://platform-docs.opentargets.org/data-access/graphql-api
+ENSG00000130513,GDF15,False,,,,,2026-08-18T01:53:14.368231+00:00,https://platform-docs.opentargets.org/data-access/graphql-api
+ENSG00000185650,ZFP36L1,False,,,,,2026-08-18T01:53:14.368231+00:00,https://platform-docs.opentargets.org/data-access/graphql-api
+ENSG00000198576,ARC,False,,,,,2026-08-18T01:53:14.368231+00:00,https://platform-docs.opentargets.org/data-access/graphql-api
+ENSG00000263961,RHEX,False,,,,,2026-08-18T01:53:14.368231+00:00,https://platform-docs.opentargets.org/data-access/graphql-api
+ENSG00000132535,DLG4,False,,,,,2026-08-18T01:53:14.368231+00:00,https://platform-docs.opentargets.org/data-access/graphql-api
+ENSG00000102760,RGCC,False,,,,,2026-08-18T01:53:14.368231+00:00,https://platform-docs.opentargets.org/data-access/graphql-api
+ENSG00000141526,SLC16A3,False,,,,,2026-08-18T01:53:14.368231+00:00,https://platform-docs.opentargets.org/data-access/graphql-api
+ENSG00000166592,RRAD,False,,,,,2026-08-18T01:53:14.368231+00:00,https://platform-docs.opentargets.org/data-access/graphql-api
+ENSG00000176731,RBIS,False,,,,,2026-08-18T01:53:14.368231+00:00,https://platform-docs.opentargets.org/data-access/graphql-api
+ENSG00000096746,HNRNPH3,False,,,,,2026-08-18T01:53:14.368231+00:00,https://platform-docs.opentargets.org/data-access/graphql-api
+ENSG00000157895,C12orf43,False,,,,,2026-08-18T01:53:14.368231+00:00,https://platform-docs.opentargets.org/data-access/graphql-api
+ENSG00000132326,PER2,False,,,,,2026-08-18T01:53:14.368231+00:00,https://platform-docs.opentargets.org/data-access/graphql-api
+ENSG00000271254,,False,,,,,2026-08-18T01:53:14.368231+00:00,https://platform-docs.opentargets.org/data-access/graphql-api
+ENSG00000197111,PCBP2,False,,,,,2026-08-18T01:53:14.368231+00:00,https://platform-docs.opentargets.org/data-access/graphql-api
+ENSG00000113384,GOLPH3,False,,,,,2026-08-18T01:53:14.368231+00:00,https://platform-docs.opentargets.org/data-access/graphql-api
+ENSG00000177410,ZFAS1,False,,,,,2026-08-18T01:53:14.368231+00:00,https://platform-docs.opentargets.org/data-access/graphql-api
+ENSG00000182979,MTA1,False,,,,,2026-08-18T01:53:14.368231+00:00,https://platform-docs.opentargets.org/data-access/graphql-api
+ENSG00000004864,SLC25A13,False,,,,,2026-08-18T01:53:14.368231+00:00,https://platform-docs.opentargets.org/data-access/graphql-api
+ENSG00000015568,RGPD5,False,,,,,2026-08-18T01:53:14.368231+00:00,https://platform-docs.opentargets.org/data-access/graphql-api
+ENSG00000168993,CPLX1,False,,,,,2026-08-18T01:53:14.368231+00:00,https://platform-docs.opentargets.org/data-access/graphql-api
+ENSG00000183508,TENT5C,False,,,,,2026-08-18T01:53:14.368231+00:00,https://platform-docs.opentargets.org/data-access/graphql-api
+ENSG00000275835,TUBGCP5,False,,,,,2026-08-18T01:53:14.368231+00:00,https://platform-docs.opentargets.org/data-access/graphql-api
+ENSG00000110799,VWF,True,CHEMBL2108339,EGAPTIVON PEGOL,Unknown,PHASE_2,2026-08-18T01:53:14.368231+00:00,https://platform-docs.opentargets.org/data-access/graphql-api
+ENSG00000110799,VWF,True,CHEMBL2109624,CAPLACIZUMAB,Antibody,APPROVAL,2026-08-18T01:53:14.368231+00:00,https://platform-docs.opentargets.org/data-access/graphql-api
+ENSG00000110799,VWF,True,CHEMBL4298126,VON WILLEBRAND FACTOR HUMAN,Unknown,APPROVAL,2026-08-18T01:53:14.368231+00:00,https://platform-docs.opentargets.org/data-access/graphql-api
+ENSG00000110799,VWF,True,CHEMBL2107873,VONICOG ALFA,Protein,APPROVAL,2026-08-18T01:53:14.368231+00:00,https://platform-docs.opentargets.org/data-access/graphql-api
+ENSG00000145703,IQGAP2,False,,,,,2026-08-18T01:53:14.368231+00:00,https://platform-docs.opentargets.org/data-access/graphql-api
+ENSG00000171621,SPSB1,False,,,,,2026-08-18T01:53:14.368231+00:00,https://platform-docs.opentargets.org/data-access/graphql-api
+ENSG00000125144,MT1G,False,,,,,2026-08-18T01:53:14.368231+00:00,https://platform-docs.opentargets.org/data-access/graphql-api
+ENSG00000118785,SPP1,True,CHEMBL2109530,ASK-8007,Unknown,PHASE_1_2,2026-08-18T01:53:14.368231+00:00,https://platform-docs.opentargets.org/data-access/graphql-api
+ENSG00000228262,LINC01320,False,,,,,2026-08-18T01:53:14.368231+00:00,https://platform-docs.opentargets.org/data-access/graphql-api
+ENSG00000185885,IFITM1,False,,,,,2026-08-18T01:53:14.368231+00:00,https://platform-docs.opentargets.org/data-access/graphql-api
+ENSG00000019582,CD74,True,CHEMBL4298138,REPOTRECTINIB,Small molecule,APPROVAL,2026-08-18T01:53:14.368231+00:00,https://platform-docs.opentargets.org/data-access/graphql-api
+ENSG00000019582,CD74,True,CHEMBL1743040,MILATUZUMAB,Antibody,PHASE_1_2,2026-08-18T01:53:14.368231+00:00,https://platform-docs.opentargets.org/data-access/graphql-api
+ENSG00000215845,TSTD1,False,,,,,2026-08-18T01:53:14.368231+00:00,https://platform-docs.opentargets.org/data-access/graphql-api
+ENSG00000205502,C2CD4B,False,,,,,2026-08-18T01:53:14.368231+00:00,https://platform-docs.opentargets.org/data-access/graphql-api
+ENSG00000196436,NPIPB15,False,,,,,2026-08-18T01:53:14.368231+00:00,https://platform-docs.opentargets.org/data-access/graphql-api
+ENSG00000135480,KRT7,False,,,,,2026-08-18T01:53:14.368231+00:00,https://platform-docs.opentargets.org/data-access/graphql-api
+ENSG00000205364,MT1M,False,,,,,2026-08-18T01:53:14.368231+00:00,https://platform-docs.opentargets.org/data-access/graphql-api
+ENSG00000183098,GPC6,False,,,,,2026-08-18T01:53:14.368231+00:00,https://platform-docs.opentargets.org/data-access/graphql-api
+ENSG00000255823,,False,,,,,2026-08-18T01:53:14.368231+00:00,https://platform-docs.opentargets.org/data-access/graphql-api
